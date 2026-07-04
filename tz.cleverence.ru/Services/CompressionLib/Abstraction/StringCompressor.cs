@@ -39,7 +39,7 @@ namespace tz.cleverence.ru.Services.CompressionLib.Abstraction
         /// </summary>
         /// <param name="input">Исходная строка (маленькие латинские буквы)</param>
         /// <returns>Сжатая строка</returns>
-        public virtual Task<string> CompressAsync(string input)
+        public virtual Task<string> CompressAsync(string input, CancellationToken cancellationToken)
         {
             return Task.Run(() => Compress(input));
         }
@@ -49,7 +49,7 @@ namespace tz.cleverence.ru.Services.CompressionLib.Abstraction
         /// </summary>
         /// <param name="compressed">Сжатая строка</param>
         /// <returns>Исходная строка</returns>
-        public virtual Task<string> DecompressAsync(string compressed)
+        public virtual Task<string> DecompressAsync(string compressed, CancellationToken cancellationToken)
         {
             return Task.Run(() => Decompress(compressed));
         }

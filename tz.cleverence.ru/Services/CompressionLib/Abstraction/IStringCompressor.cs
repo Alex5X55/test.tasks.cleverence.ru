@@ -24,13 +24,13 @@
         /// </summary>
         /// <param name="input">Исходная строка (маленькие латинские буквы)</param>
         /// <returns>Сжатая строка</returns>
-        Task<string> CompressAsync(string input);
+        Task<string> CompressAsync(string input, CancellationToken cancellationToken);
 
         /// <summary>
         /// Распаковывает строку, вариант для ассинхронных операций
         /// </summary>
         /// <param name="compressed">Сжатая строка</param>
         /// <returns>Исходная строка</returns>
-        Task<string> DecompressAsync(string compressed);
+        Task<string> DecompressAsync(string compressed, CancellationToken cancellationToken);
     }
 }
